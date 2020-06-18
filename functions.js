@@ -11,19 +11,19 @@ function getRandomInteger (minimum, maximum) {
 }
 
 // Povided Arrays
-const nouns = ['dragons', 'toasters']
+const nouns = ['soup','room','bears','bed','table','spoon','chair','girl','bowl','kitchen','forest','house','bed','table','porridge']
 
-const verbs = ['walked', 'ran']
+const verbs = ['knocked','came','was','went','was','tasted','decided','lay','tried','broke','walked', 'ran','ate', 'slept','jumped', 'cried','shouted','sat','broke','pieces','said','growled',]
 
-const adverbs = ['menacingly', 'intentionally']
+const adverbs = ['hungry','and','pretty soon','in the','menacingly', 'boldly','quickly','really','hardly','tomorrow','carefully','cheerfully ','in','out', 'above']
 
-const adjectives = ['wild', 'slippery']
+const adjectives = ['three','upon','little ','wild', 'slippery','hard','soft','just right','comfy','hot','cold', 'stiff','soft','fun','small','big','medium']
 
-const proNouns = ['they', 'we', 'you', 'he', 'she', 'I', 'it']
+const proNouns = ['they', 'we', 'you', 'he', 'she', 'I', 'it','Goldilocks','The three bears','MamaBear','Papabear','Babybear','no one']
 
-const openings = ['Once upon a time', 'I watched']
+const openings = ['Once upon a time', 'It was the best of times','It was worst of times','A long time ago','When it passed','Far away Far Away', 'It was yesterday','Have you heard about','In the beginning','Yesterday','This afternoon','I wonder if','It came to pass','When']
 
-const closings = ['with extra cheese', 'the end']
+const closings = ['and so the story goes ', 'the end','day in, day out ','goes a long way ','never again', 'it passed','by then','from there','and so it was', 'but before soon','later that day','happily ever after','the end','or so it was said','this time','again','back to back']
 
 // Instructions:
 
@@ -84,3 +84,60 @@ const closings = ['with extra cheese', 'the end']
 
 // Submission
 // Submit your GitHub repo URL through the LMS.
+
+// Pseudo code:
+
+// add words to arrays
+// create a function that creates a random sentence
+// Does this function require any parameters : no
+// Does this function need to return somthing : yes a new random sentence
+// how do you create a random sentence ?
+
+// create a function that outputs some text
+// does function require any parameters : yes to text to ouput
+//does this function need to return anything: no
+
+// execute a loop ten times
+// each cycle of the loop create a random sentence and then outputs it
+
+
+function createRandomSentence(){
+  const randomSentence = openings[ getRandomInteger( 0, openings.length - 1 ) ] + ' ' +
+  
+  // random pro_noun
+  proNouns [ getRandomInteger(0, proNouns.length - 1 ) ] + ' ' +
+  
+  // random verb
+  verbs [ getRandomInteger( 0, verbs.length - 1 ) ] + ' ' +
+  
+  // random adverb add comma maybe a space
+  adverbs [ getRandomInteger(0, adverbs.length - 1 ) ] + ', ' +
+  
+  // random adjective
+  adjectives[ getRandomInteger(0, adjectives.length - 1 ) ] + ' ' +
+  
+   // random noun
+  nouns[ getRandomInteger(0, nouns.length - 1 ) ] + ' ' +
+  
+  // random ending  add a period
+  
+closings [ getRandomInteger (0, closings.length - 1) ] + '.'
+
+// return random sentence
+
+  return randomSentence
+}
+
+function outputSentence(sentence){
+  console.log(sentence)
+}
+
+const numberOfSentences = 10 // when needed can be modified, so best to create a variable to call on instead
+
+for(i = 0; i < numberOfSentences; i++){
+  //let randomSentence = createRandomSentence()
+  //outputSentence(randomSentence)
+
+   outputSentence(createRandomSentence())// just outputs what needs to be returned
+}
+
